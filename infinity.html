@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="section">
+    <section class="header">
+      <h1 class="section-heading">Unicode Infinity Test</h1>
+      <h3 id="limit"></h3>
+    </section>
+  </div>
+  <div class="section">
+    <div class="container bed-container">
+<div id="bed"></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <p>Add a <code>&#NUMBER;</code> entity in triplicate: entity, entity with VARIATION SELECTOR-15, and VARIATION SELECTOR-16.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+var min = 9398;
+var max = 10000;
+var breaker = 10;
+//var min = 1;
+//var max = 100000;
+
+document.getElementById("limit").innerHTML = "Limited from characters "+min+" to "+max;
+
+var fe0e = "&#xFE0E;"
+var fe0f = "&#xFE0F;"
+
+b = document.getElementById("bed");
+
+for (var i = min; i < max; i++) { 
+
+    e = "&#"+i+";";
+    b.innerHTML = b.innerHTML + "<span class='slug'>" + e + e + fe0e + e + fe0f + "</span>";
+
+    if ((min - i - 1) % breaker === 0) { console.log("split"); b.innerHTML = b.innerHTML + "<br>"}
+}
+
+</script>

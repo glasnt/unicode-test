@@ -11,3 +11,6 @@ td {
   text-align: center;
   margin-top: 60px;
 }
+.bed-container { max-width: 1600px;}
+#bed { text-align: center;}
+.slug{ font-size: 36px; padding-left: 5px; padding-right: 5px; width: 120px; display: inline-block;}
